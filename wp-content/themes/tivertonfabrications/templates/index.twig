@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="container-fluid max-width">
+		<div class="row">
+			<div class="col-12 my-5">
+
+				<h1>News</h1>
+
+				{% for post in posts %}
+					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+				{% endfor %}
+
+				{% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

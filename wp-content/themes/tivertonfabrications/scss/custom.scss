@@ -1,0 +1,43 @@
+// Define Custom Bootstrap Variables here
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 1025px,
+        xl: 1200px
+);
+
+$body-bg:                     $white;
+$body-color:                  $black;
+
+$font-size-base:              1rem;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+
+$link-color:                  $black;
+$link-decoration:             none;
+$link-hover-color:            darken($link-color, 15%);
+$link-hover-decoration:       underline;
+
+$headings-font-weight:        400;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2.25;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$headings-margin-bottom:      1rem;
+
+$red:                         #ca241f;
+
+
+.red{
+    color:$red;
+}
+
+.white{
+    color:$white;
+}

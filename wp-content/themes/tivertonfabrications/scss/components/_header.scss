@@ -1,0 +1,130 @@
+$headerHeight: rem-calc(80);
+// header.scss
+
+
+.header-info{
+    background: $red;
+    color: $white;
+
+    a{
+        color: $white;
+        text-decoration: none;
+    }
+
+    *{
+        font-size: 1em;
+        line-height: normal;
+    }
+}
+
+.header {
+
+    position: relative;
+
+    height: $headerHeight;
+
+    z-index: 5;
+
+    //@include inc-box-shadow(0,5px,5px,0,0.15);
+
+    @include media-breakpoint-up(lg) {
+
+        //@include inc-box-shadow(0,0,0,0,0);
+
+        @include transition-all(0.25s, ease-in-out);
+
+        background: transparent;
+
+        height: auto;
+    }
+}
+
+
+.header {
+
+    .container-fluid{
+        position: relative;
+        top: 7px;
+
+        @include media-breakpoint-up(lg) {
+            top: 15px;
+        }
+    }
+
+    &__container {
+
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+
+            flex-direction: row;
+        }
+
+        nav {
+
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+
+            @include media-breakpoint-up(lg) {
+
+                justify-content: flex-end;
+            }
+        }
+
+        *{
+            background: transparent;
+        }
+    }
+}
+
+
+.header {
+    &__logo{
+        min-height: rem-calc(60);
+        display: flex;
+        align-items: center;
+
+        .img-fluid{
+            @include media-breakpoint-down(sm) {
+                max-width: 113px;
+            }
+        }
+    }
+}
+
+
+.header {
+    &__navigation{
+        &__wrapper{
+
+            position: absolute;
+            left: rem-calc(-15);
+            top: rem-calc(80);
+
+            @include media-breakpoint-up(lg){
+
+                position: relative;
+                left: 0;
+                top: 0;
+
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+// Sticky States
+.header.with-sticky{
+    &.js-is-sticky{
+
+        @include inc-box-shadow(0,5px,5px,0,0.15);
+
+        background: $white;
+
+    }
+}

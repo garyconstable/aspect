@@ -1,0 +1,9 @@
+.idea/
+wp-config.php
+
+vendor
+
+
+.DS_Store
+node_modules/
+.idea

@@ -1,0 +1,107 @@
+// mixins - Global Vars
+
+$defaultRem : 16;
+@function rem-calc($size) { $remSize: $size / $defaultRem; @return #{$remSize}rem; }
+
+// mixins
+//$site-theme-img-path: '/wp-content/themes/metal-tech/static/images/';
+$site-theme-img-path: '/ami-metaltech-test.co.uk/wp-content/themes/metal-tech/static/images/';
+
+
+//EXAMPLE = @include transition-all(0.25s, ease-in-out);
+@mixin transition-all($time, $type) {
+  -webkit-transition: all $time $type;
+  -moz-transition: all $time $type;
+  -o-transition: all $time $type;
+  transition: all $time $type;
+}
+
+
+//EXAMPLE = @include multi-column-list(2, 2rem);
+@mixin multi-column-list($columns, $spacing) {
+  -webkit-column-count: $columns;
+  -moz-column-count: $columns;
+  column-count: $columns;
+  -webkit-column-gap: $spacing;
+  column-gap: $spacing;
+  -moz-column-gap: $spacing;
+}
+
+
+//EXAMPLE = @include border-radius(50%);
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+
+//EXAMPLE = @include inc-box-shadow(0px,5px,5px,0px,0.25);
+@mixin inc-box-shadow($hl,$vl,$br,$sr,$opacity) {
+  box-shadow: $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+  -webkit-box-shadow: $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+}
+
+
+//EXAMPLE = @include inset-box-shadow(0px,5px,5px,0px,0.25);
+@mixin inset-box-shadow($hl,$vl,$br,$sr,$opacity) {
+  box-shadow: inset $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: inset $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+  -webkit-box-shadow: inset $hl $vl $br $sr rgba(0, 0, 0, $opacity);
+}
+
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+
+//EXAMPLE = @include rotate(180);
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
+//EXAMPLE = @include flip-vertical;
+@mixin flip-vertical() {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipX;
+  -ms-filter: "FlipX";
+}
+
+
+
+//EXAMPLE @include complex-gradient(top, #FFFFFF, 45%, #000000, 55%);
+@mixin complex-gradient($startPoint, $startColor, $startInterval, $endColor, $endInterval) {
+  background-image: -webkit-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+  background-image:    -moz-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+  background-image:     -ms-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+  background-image:      -o-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+  background-image:         linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+}
+
+// stylelint-disable property-blacklist
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    @if length($transition) == 0 {
+      transition: $transition-base;
+    } @else {
+      transition: $transition;
+    }
+  }
+  @if $enable-prefers-reduced-motion-media-query {
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}
+

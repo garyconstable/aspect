@@ -1,0 +1,34 @@
+
+.homepage-banner{
+    position: relative;
+    z-index: 0;
+    top:-80px;
+
+    @include media-breakpoint-up(lg){
+        top:-60px;
+    }
+
+    @include media-breakpoint-down(sm){
+        .h1{
+            font-size: 1.2rem;
+        }
+
+        .h2{
+            font-size: 1rem;
+        }
+    }
+
+
+    .hbupro-hero-banner-wrp-1 {
+        .hbupro-hero-banner-inner {
+
+            @include media-breakpoint-up(md) {
+                padding: 180px 0px 180px 0px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                padding: 240px 0px 240px 0px;
+            }
+        }
+    }
+}

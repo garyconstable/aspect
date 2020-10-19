@@ -1,0 +1,37 @@
+{% block html_head_container %}
+
+	{% include 'partials/html-header.twig' %}
+
+	{% block head %}
+	{% endblock %}
+
+	</head>
+
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+
+{% block header %}
+	{% include 'partials/header.twig' %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+
+	{% include 'partials/footer.twig' %}
+	{{ function('wp_footer') }}
+
+{% endblock %}
+
+{% block footer_aux_scripts %}
+	{% if options.g_footer_scripts %}
+		{{ options.g_footer_scripts }}
+	{% endif %}
+{% endblock %}
+
+
+
+</body>
+</html>

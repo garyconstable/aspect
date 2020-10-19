@@ -1,0 +1,29 @@
+{% if menu %}
+	<ul class="nav__navigation">
+		{% for item in menu %}
+			<li class="nav__item {{ item.classes | join(' ') }} {{ item.children ? ' has-sub-nav' }}">
+				{% if item.children %}
+					<span>
+						<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+						<a class="nav__sub-nav__link nav__sub-nav__link--{{ loop.index }} d-lg-none" data-toggle="collapse" href="#"><i>></i></a>
+					</span>
+					<ul class="nav__sub-nav nav__sub-nav--{{ loop.index }}">
+						<li class="nav-drop-item d-lg-none">
+							<a class="nav__sub-nav__back-link" href="#">
+								<i><</i>
+								Back
+							</a>
+						</li>
+						{% for child in item.children %}
+							<li class="nav-drop-item">
+								<a href="{{ child.link }}">{{ child.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+					<a target="{{ item.target }}" href="{{ item.link }}" class="nav__item__link">{{ item.title }}</a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

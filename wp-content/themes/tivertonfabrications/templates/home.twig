@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <section class="homepage-banner">
+        {{ function('do_shortcode', '[hbupro_banner id="46"]') }}
+    </section>
+
+    <div class="container-fluid max-width mb-5">
+        <div class="row">
+            <div class="col-12">
+                <h1>{{ post.title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ post.content }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

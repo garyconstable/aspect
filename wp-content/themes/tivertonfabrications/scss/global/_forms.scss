@@ -1,0 +1,68 @@
+// forms.scss
+
+.af-form{
+    &.acf-form{
+        .af-field{
+
+            border-top: none;
+
+            margin-bottom: 1.5rem;
+            padding: 0;
+
+            .af-label label{
+
+                font-size: 1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+.af-form {
+    &.acf-form {
+        .af-field {
+            input,
+            textarea{
+
+                border: rem-calc(1) solid;
+            }
+
+            input{
+
+                height: rem-calc(50);
+            }
+
+            textarea{
+
+                height: rem-calc(150);
+
+            }
+        }
+    }
+}
+
+
+.af-submit{
+    &.acf-form-submit{
+
+        margin-bottom: 1.5rem;
+        padding: 0;
+
+        button{
+
+            @include border-radius(1rem);
+
+            border: none;
+
+            background: $black;
+
+            height: rem-calc(50);
+            width: rem-calc(230);
+
+            font-size: rem-calc(16);
+            font-weight: 600;
+            color: $white;
+        }
+    }
+}

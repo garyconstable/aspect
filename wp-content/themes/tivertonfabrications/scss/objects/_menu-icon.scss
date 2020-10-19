@@ -1,0 +1,157 @@
+$menu-icon-padding-x           : 0px !default;
+$menu-icon-padding-y           : 15px !default;
+$menu-icon-layer-width         : 35px !default;
+$menu-icon-layer-height        : 2px !default;
+$menu-icon-layer-spacing       : 6px !default;
+$menu-icon-layer-color         : $black !default;
+$menu-icon-layer-border-radius : 0 !default;
+$menu-icon-hover-opacity       : 1 !default;
+$menu-icon-active-layer-color  : $menu-icon-layer-color !default;
+$menu-icon-active-hover-opacity: $menu-icon-hover-opacity !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $menu-icon-hover-use-filter as true and
+// change the value of $menu-icon-hover-filter accordingly.
+$menu-icon-hover-use-filter   : false !default;
+$menu-icon-hover-filter       : opacity(50%) !default;
+$menu-icon-active-hover-filter: $menu-icon-hover-filter !default;
+
+.menu-icon {
+
+    padding: $menu-icon-padding-y $menu-icon-padding-x;
+    cursor: pointer;
+    display: flex;
+
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+
+    background-color: transparent;
+
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    position: absolute;
+    top: rem-calc(10);
+    right: 0;
+
+    &:hover {
+        @if $menu-icon-hover-use-filter == true {
+
+            filter: $menu-icon-hover-filter;
+        }
+        @else {
+
+            opacity: $menu-icon-hover-opacity;
+        }
+    }
+
+    &.active {
+        &:hover {
+            @if $menu-icon-hover-use-filter == true {
+
+                filter: $menu-icon-active-hover-filter;
+            }
+            @else {
+
+                opacity: $menu-icon-active-hover-opacity;
+            }
+        }
+
+        .menu-icon-inner,
+        .menu-icon-inner::before,
+        .menu-icon-inner::after {
+
+            background-color: $menu-icon-active-layer-color;
+        }
+    }
+}
+
+.menu-icon-box {
+
+    width: $menu-icon-layer-width;
+    height: $menu-icon-layer-height * 3 + $menu-icon-layer-spacing * 2;
+    display: inline-block;
+    position: relative;
+}
+
+.menu-icon-inner {
+
+    display: block;
+    top: 50%;
+    margin-top: $menu-icon-layer-height / -2;
+
+    &,
+    &::before,
+    &::after {
+        width: $menu-icon-layer-width;
+        height: $menu-icon-layer-height;
+        background-color: $red;
+        border-radius: $menu-icon-layer-border-radius;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+    }
+
+    &::before {
+        top: ($menu-icon-layer-spacing + $menu-icon-layer-height) * -1;
+    }
+
+    &::after {
+        bottom: ($menu-icon-layer-spacing + $menu-icon-layer-height) * -1;
+    }
+}
+
+
+.menu-icon {
+    .menu-icon-inner {
+
+        top: $menu-icon-layer-height / 2;
+
+        &::before {
+
+            top: $menu-icon-layer-height + $menu-icon-layer-spacing;
+            transition-property: transform, opacity;
+            transition-timing-function: ease;
+            transition-duration: 0.15s;
+        }
+
+        &::after {
+
+            top: ($menu-icon-layer-height * 2) + ($menu-icon-layer-spacing * 2);
+        }
+    }
+
+    &[aria-expanded="true"] {
+        .menu-icon-inner {
+            $y-offset: $menu-icon-layer-spacing + $menu-icon-layer-height;
+
+            transform: translate3d(0, $y-offset, 0) rotate(45deg);
+
+            &::before {
+
+                transform: rotate(-45deg) translate3d($menu-icon-layer-width / -7, $menu-icon-layer-spacing * -1, 0);
+                opacity: 0;
+            }
+
+            &::after {
+
+                transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
+            }
+        }
+    }
+}
+

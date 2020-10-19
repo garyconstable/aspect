@@ -1,0 +1,65 @@
+.footer {
+
+    border-top: rem-calc(1) solid rgba($black, .3);
+
+    padding: rem-calc(30) 0 0 0;
+
+    background: rgba($black, .1);
+
+
+    &__inner{
+
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(lg){
+
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+.footer{
+    &__inner{
+        &__section{
+            &.company-info{
+
+                display: flex;
+                flex-direction: column;
+
+                h4{
+
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.footer{
+    &__sub-footer{
+
+          margin-top: rem-calc(30);
+
+          background: rgba($black, .6);
+
+          padding: rem-calc(10) 0;
+
+        p{
+
+            text-align: center;
+
+            margin: 0;
+
+            color: $white;
+
+            a{
+
+                color: $white;
+            }
+        }
+    }
+}

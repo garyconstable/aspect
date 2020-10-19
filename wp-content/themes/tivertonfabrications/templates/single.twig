@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container-fluid max-width mb-5">
+		<div class="row">
+			<div class="col-12">
+
+				{% if post.thumbnail.src  %}
+					<img class="img-fluid lazy-load" src="{{ post.thumbnail.src }}">
+				{% endif %}
+
+				<div>
+					<h1>{{ post.title }}</h1>
+					<p class="font-italic">Published - {{ post.post_date_gmt|date('jS M Y ') }}</p>
+					{{post.content}}
+
+					<a href="/">Back to News</a>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

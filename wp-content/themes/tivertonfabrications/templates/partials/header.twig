@@ -1,0 +1,47 @@
+{% set class = class|default("") %}
+
+<section class="header-info">
+    <div class="container-fluid max-width">
+        <div class="row">
+            <div class="col-md d-none d-md-flex">
+                <span class="text-left">
+                    <h5 class="m-0 pb-3 pt-3 pr-3 pl-0">Manufacturers of Precision Tubes and Cylinders</h5>
+                </span>
+            </div>
+            <div class="col-md">
+                <span class="text-center text-md-right">
+                    <ul class="list-inline m-0 pb-3 pt-3 pl-3 pr-0">
+                        <li class="list-inline-item">(01884) 255701</li>
+                        <li class="list-inline-item">|</li>
+                        <li class="list-inline-item"><a href="mailto:info@tiverton-fabrivcations.co.uk">info@tiverton-fabrivcations.co.uk</a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<header class="header {{ options.sticky_header ? 'with-sticky' : '' }} {{ class }}">
+    <div class="container-fluid max-width">
+        <div class="row">
+            <div class="col-12">
+                <div class="header__container">
+                    <a class="header__logo" href="/" rel="home">
+                         <img class="img-fluid" src="{{ site.theme.link }}/static/images/ami--logo.png"/>
+                        {# Logo goes here #}
+                    </a>
+                    <a class="menu-icon d-lg-none" data-toggle="collapse" href="#mainNavigation" role="button" aria-expanded="false" aria-controls="mainNavigation">
+                        <div class="menu-icon-box">
+                            <div class="menu-icon-inner"></div>
+                        </div>
+                    </a>
+                    <div class="header__navigation__wrapper collapse d-lg-flex" id="mainNavigation">
+                        <nav role="navigation">
+                            {% include "menu.twig" with {'menu': menu.get_items} %}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
