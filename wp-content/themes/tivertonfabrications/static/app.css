@@ -6196,6 +6196,13 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fff;
 }
 
+@media (max-width: 1024.98px) {
+  /* line 133, scss/components/_footer.scss */
+  .footer__sub-footer p a {
+    font-size: 12px;
+  }
+}
+
 /* line 2, scss/components/_banner.scss */
 .homepage-banner {
   position: relative;

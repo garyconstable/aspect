@@ -132,6 +132,9 @@
 
             a{
                 color: $white;
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                }
             }
         }
     }
