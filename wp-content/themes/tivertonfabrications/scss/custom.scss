@@ -51,3 +51,18 @@ $f1:                          'Heebo', sans-serif;
     font-family: $f1;
     font-weight: 400;
 }
+
+
+body {
+
+    .btn-primary {
+        background: $red;
+        border-color: $red;
+
+        &:hover {
+            background: darken($red, 10%);
+            border-color: darken($red, 20%);
+        }
+    }
+
+}

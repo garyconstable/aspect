@@ -1,0 +1,15 @@
+.industry{
+    &__item {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+
+        img{
+            align-self: flex-start;
+        }
+
+       .btn{
+            align-self: start;
+        }
+    }
+}

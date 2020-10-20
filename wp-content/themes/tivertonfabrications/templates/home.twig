@@ -92,10 +92,13 @@
 
                     {% for item in industries %}
 
-                        <div class="col-sm">
-                            <h3>{{ item.title }}</h3>
-                            <div>{{ item.content }}</div>
-                            <img src="{{ item.image.url }}" class="img-fluid" />
+                        <div class="col-sm industry__item">
+                            <div>
+                                <img class="img-fluid mb-3" src="{{ item.image.url }}" alt="Image of {{ item.title }}" />
+                                <h3 class="red">{{ item.title }}</h3>
+                                <div>{{ item.content }}</div>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-4">Learn More</a>
                         </div>
 
                     {%  endfor %}
