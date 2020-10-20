@@ -32,7 +32,12 @@ $h6-font-size:                $font-size-base;
 $headings-margin-bottom:      1rem;
 
 $red:                         #ca241f;
+$black:                       #262626;
+$f1:                          'Heebo', sans-serif;
 
+.black{
+    color: $black;
+}
 
 .red{
     color:$red;
@@ -40,4 +45,9 @@ $red:                         #ca241f;
 
 .white{
     color:$white;
+}
+
+.font1{
+    font-family: $f1;
+    font-weight: 400;
 }

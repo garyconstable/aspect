@@ -1,9 +1,8 @@
 .idea/
 wp-config.php
-
 vendor
-
-
 .DS_Store
 node_modules/
 .idea
+wp-content/uploads
+wp-content/wflogs

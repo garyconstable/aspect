@@ -4,62 +4,11 @@
             <div class="col-12">
                 <div class="footer__inner">
 
-                    {# Social Company Info Section Start (if required) #}
-                    <div class="footer__inner__section company-info">
-                        {% if options.company_name %}
-                            <h4>{{ options.company_name }}</h4>
-                        {% endif %}
-                        <address class="mb-3">
-                            {{ options.address }}
-                        </address>
-                        {% if options.phone_number %}
-                            <a href="tel:{{ options.phone_number }}">{{ options.phone_number }}</a>
-                        {% endif %}
-                        {% if options.email_address %}
-                            <a href="mailto:{{ options.email_address }}">{{ options.email_address }}</a>
-                        {% endif %}
-                    </div>
-                    {# Social Company Info Section End (if required) #}
-
-
-
-                    {% if options.facebook_link or options.linkedin_link or options.twitter_link or options.youtube_link %}
-                        {# Social Links Section Start (if required) #}
-                        <div class="footer__inner__section">
-                            <h3 class="d-lg-none mb-0">
-                                <a class="footer__inner__section--title" data-toggle="collapse" href="#socialLinks" role="button" aria-expanded="false" aria-controls="socialLinks">
-                                    Social Links
-                                </a>
-                            </h3>
-                            <div class="collapse d-lg-flex" id="socialLinks">
-                                <ul class="footer__social-icons social-icons">
-                                    {% if options.facebook_link %}
-                                        <li><a target="_blank" class="social-icon" href="{{ options.facebook_link }}">Facebook Link Here</a></li>
-                                    {% endif %}
-                                    {% if options.linkedin_link %}
-                                        <li><a target="_blank" class="social-icon" href="{{ options.linkedin_link }}">LinkedIn Link Here</a></li>
-                                    {% endif %}
-                                    {% if options.twitter_link %}
-                                        <li><a target="_blank" class="social-icon" href="{{ options.twitter_link }}">Twitter Link Here</a></li>
-                                    {% endif %}
-                                    {% if options.youtube_link %}
-                                        <li><a target="_blank" class="social-icon" href="{{ options.youtube_link }}">Youtube Link Here</a></li>
-                                    {% endif %}
-                                    {% if options.instagram_link %}
-                                        <li><a target="_blank" class="social-icon" href="{{ options.instagram_link }}">Instagram Link Here</a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </div>
-                        {# Social Links Section End (if required) #}
-                    {% endif %}
-
                     {% if footerMenu.items %}
-                        {# Footer Links Section Start (if required) #}
                         <div class="footer__inner__section">
-                            <h3 class="d-lg-none mb-0">
+                            <h3 class="mb-0">
                                 <a class="footer__inner__section--title" data-toggle="collapse" href="#footerLinks" role="button" aria-expanded="false" aria-controls="footerLinks">
-                                    Useful Links
+                                    <span>Pages</span>
                                 </a>
                             </h3>
                             <div class="collapse d-lg-flex" id="footerLinks">
@@ -70,8 +19,49 @@
                                 </ul>
                             </div>
                         </div>
-                        {# Footer Links Section End (if required) #}
                     {% endif %}
+
+                    <div class="footer__inner__section">
+                        <h3 class="mb-0">
+                            <a class="footer__inner__section--title" data-toggle="collapse" href="#footerLinks2" role="button" aria-expanded="false" aria-controls="footerLinks">
+                                <span>Services</span>
+                            </a>
+                        </h3>
+                        <div class="collapse d-lg-flex" id="footerLinks2">
+                            <ul class="footer__footer-links my-0">
+                                <li><a href="#">Bespoke Vessels</a></li>
+                                <li><a href="#">Vacuum Chambers</a></li>
+                                <li><a href="#">Cryogenic Vessels</a></li>
+                                <li><a href="#">Weld Tybes &amp; Cylinders</a></li>
+                                <li><a href="#">Specialist Instruments</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer__inner__section company-info">
+                        <h3 class="d-none d-lg-block">Contact</h3>
+                        {#
+                        {% if options.company_name %}
+                            <h4>{{ options.company_name }}</h4>
+                        {% endif %}
+                        #}
+                        <address class="mb-0">
+                            {{ options.address }}
+                        </address>
+                        {% if options.phone_number %}
+                            <a href="tel:{{ options.phone_number }}">{{ options.phone_number }}</a>
+                        {% endif %}
+                        {% if options.email_address %}
+                            <a href="mailto:{{ options.email_address }}">{{ options.email_address }}</a>
+                        {% endif %}
+                        <a href="#">Privacy Policy Announcements</a>
+                    </div>
+
+                    <div class="footer__inner__section">
+                        <a class="footer__logo" href="/" rel="home">
+                            <img src="{{ site.theme.link }}/static/images/ami--logo.png"/>
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -82,7 +72,7 @@
         <div class="container-fluid max-width">
             <div class="row">
                 <div class="col-12">
-                    <p>{{ "now"|date('Y') }} Website Design <a target="_blank" class="mx-1" href="https://www.amiweb.co.uk/">AMI</a> | Marketing For Manufacturing</p>
+                    <p>{{ "now"|date('Y') }} Tiverton Fabrication Limited | Website Design by <a target="_blank" class="mx-1" href="https://www.amiweb.co.uk/">AMI Website Design</a></p>
                 </div>
             </div>
         </div>

@@ -1,22 +1,111 @@
 {% extends "base.twig" %}
 
+{% set what = post.get_field('what')  %}
+{% set services = post.get_field('services')  %}
+{% set why = post.get_field('why')  %}
+{% set quote = post.get_field('quote')  %}
+{% set industries = post.get_field('industries')  %}
+
 {% block content %}
 
     <section class="homepage-banner">
         {{ function('do_shortcode', '[hbupro_banner id="46"]') }}
     </section>
 
-    <div class="container-fluid max-width mb-5">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{ post.title }}</h1>
+    <main class="container-fluid max-width mb-5">
+
+        <article class="row">
+
+            <div class="col-sm">
+                <p>{{ what.sub_title }}</p>
+                <h3>{{ what.title }}</h3>
+                <p>{{ what.content }}</p>
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                {{ post.content }}
+
+            <div class="col-sm">
+                <img src="{{ what.image.url }}" class="img-fluid" />
             </div>
-        </div>
-    </div>
+
+        </article>
+
+        <aside class="row">
+
+            <section class="col-12">
+
+                <div class="row">
+
+                    {% for item in services.service %}
+
+                        <div class="col-sm col-sm-3">
+
+                            <p>{{ item.text }}</p>
+                            <img src="{{ item.image.url }}" class="img-fluid" />
+
+                        </div>
+
+                        {% if loop.index0 == 1 %}
+
+                            <div class="col-sm col-sm-6">
+                                <p>{{ services.sub_title }}</p>
+                                <p>{{ services.title }}</p>
+                            </div>
+
+                        {% endif %}
+
+                    {%  endfor %}
+
+                </div>
+
+            </section>
+
+            <div class="col-12">
+
+                <div class="row">
+
+                    <section class="col-sm">
+                        <h3>{{ why.title }}</h3>
+                        <div>{{ why.content }}</div>
+                    </section>
+
+                    <section class="col-sm">
+
+                        {{ function('do_shortcode', quote) }}
+
+                    </section>
+
+                </div>
+
+            </div>
+
+            <section class="col-12">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="text-center red">Industries we cover</h2>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    {% for item in industries %}
+
+                        <div class="col-sm">
+                            <h3>{{ item.title }}</h3>
+                            <div>{{ item.content }}</div>
+                            <img src="{{ item.image.url }}" class="img-fluid" />
+                        </div>
+
+                    {%  endfor %}
+
+                </div>
+
+            </section>
+
+        </aside>
+
+    </main>
 
 {% endblock %}

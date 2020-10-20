@@ -111,6 +111,16 @@
                     color: $white;
                 }
             }
+
+
+            &:last-child{
+                a{
+                    @include media-breakpoint-up(lg) {
+                        background: $red;
+                        padding: 10px 20px;
+                    }
+                }
+            }
         }
     }
 }
