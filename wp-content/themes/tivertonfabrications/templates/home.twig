@@ -12,43 +12,53 @@
         {{ function('do_shortcode', '[hbupro_banner id="46"]') }}
     </section>
 
-    <main class="container-fluid max-width mb-5">
+    <main class="mb-5">
 
-        <article class="row">
+        <div class="hp__what">
 
-            <div class="col-sm">
-                <p>{{ what.sub_title }}</p>
-                <h3>{{ what.title }}</h3>
-                <p>{{ what.content }}</p>
+            <div class="container-fluid max-width">
+
+                <div class="row">
+
+                    <div class="col-sm">
+                        <p class="sub-title">{{ what.sub_title }}</p>
+                        <h3 class="section-title">{{ what.title }}</h3>
+                        <p>{{ what.content }}</p>
+                        <a href="#" class="mt-4 mb-5 red__button btn btn-primary">Contact Us</a>
+                    </div>
+
+                    <div class="col-sm">
+                        <img src="{{ what.image.url }}" class="img-fluid" />
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="col-sm">
-                <img src="{{ what.image.url }}" class="img-fluid" />
-            </div>
+        </div>
 
-        </article>
+        <div class="hp__services">
 
-        <aside class="row">
-
-            <section class="col-12">
+            <div class="container-fluid max-width">
 
                 <div class="row">
 
                     {% for item in services.service %}
 
-                        <div class="col-sm col-sm-3">
-
-                            <p>{{ item.text }}</p>
-                            <img src="{{ item.image.url }}" class="img-fluid" />
-
+                        <div class="col-md col-md-3 idx_{{ loop.index0 }}">
+                            <div class="img__container">
+                                <img src="{{ item.image.url }}" class="img-fluid" />
+                                <h4>{{ item.text }}</h4>
+                            </div>
                         </div>
 
                         {% if loop.index0 == 1 %}
 
-                            <div class="col-sm col-sm-6">
-                                <p>{{ services.sub_title }}</p>
-                                <p>{{ services.title }}</p>
+                            <div class="col-md col-md-6 idx_7">
+                                <div class="content">
+                                    <p class="mb-0 sub-title__white">{{ services.sub_title }}</p>
+                                    <h2 class="section-title__white">{{ services.title }}</h2>
+                                </div>
                             </div>
 
                         {% endif %}
@@ -57,57 +67,67 @@
 
                 </div>
 
-            </section>
-
-            <div class="col-12">
-
-                <div class="row">
-
-                    <section class="col-sm">
-                        <h3>{{ why.title }}</h3>
-                        <div>{{ why.content }}</div>
-                    </section>
-
-                    <section class="col-sm">
-
-                        {{ function('do_shortcode', quote) }}
-
-                    </section>
-
-                </div>
-
             </div>
 
-            <section class="col-12">
+        </div>
 
-                <div class="row">
+        <div class="container-fluid max-width">
 
-                    <div class="col-12">
-                        <h2 class="text-center red">Industries we cover</h2>
+            <aside class="row">
+
+                <div class="col-12">
+
+                    <div class="row">
+
+                        <section class="col-sm">
+                            <h3 class="text-left section-title mt-3 mt-lg-5 mb-2">{{ why.title }}</h3>
+                            <div>{{ why.content }}</div>
+                        </section>
+
+                        <section class="col-sm">
+                            {#
+                            {{ function('do_shortcode', quote) }}
+                            #}
+                        </section>
+
                     </div>
 
+                    <hr class="sep" />
+
                 </div>
 
-                <div class="row">
+                <section class="col-12">
 
-                    {% for item in industries %}
+                    <div class="row">
 
-                        <div class="col-sm industry__item">
-                            <div>
-                                <img class="img-fluid mb-3" src="{{ item.image.url }}" alt="Image of {{ item.title }}" />
-                                <h3 class="red">{{ item.title }}</h3>
-                                <div>{{ item.content }}</div>
-                            </div>
-                            <a href="#" class="btn btn-primary mt-4">Learn More</a>
+                        <div class="col-12">
+                            <h2 class="text-lg-center section-title my-5">Industries we cover</h2>
                         </div>
 
-                    {%  endfor %}
+                    </div>
 
-                </div>
+                    <div class="row">
 
-            </section>
+                        {% for item in industries %}
 
-        </aside>
+                            <div class="col-md industry__item">
+                                <div>
+                                    <img class="img-fluid" src="{{ item.image.url }}" alt="Image of {{ item.title }}" />
+                                    <h3 class="title">{{ item.title }}</h3>
+                                    <div class="content">{{ item.content }}</div>
+                                </div>
+                                <a href="#" class="red__button btn btn-primary mt-4">Learn More</a>
+                            </div>
+
+                        {%  endfor %}
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </div>
 
     </main>
 

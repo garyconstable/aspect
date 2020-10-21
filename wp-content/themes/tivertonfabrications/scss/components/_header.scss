@@ -1,4 +1,5 @@
 $headerHeight: rem-calc(80);
+
 // header.scss
 
 
@@ -88,8 +89,11 @@ $headerHeight: rem-calc(80);
         display: flex;
         align-items: center;
 
+
         .img-fluid{
-            @include media-breakpoint-down(sm) {
+            transition: all 250ms ease;
+
+            @include media-breakpoint-down(md) {
                 max-width: 113px;
             }
         }
@@ -101,16 +105,16 @@ $headerHeight: rem-calc(80);
     &__navigation{
         &__wrapper{
 
+            //transition: none;
+
             position: absolute;
             left: rem-calc(-15);
-            top: rem-calc(80);
+            top: 4.5rem;
 
             @include media-breakpoint-up(lg){
-
                 position: relative;
                 left: 0;
                 top: 0;
-
                 width: 100%;
             }
         }
@@ -120,11 +124,26 @@ $headerHeight: rem-calc(80);
 
 // Sticky States
 .header.with-sticky{
-    &.js-is-sticky{
+    &.js-is-sticky {
 
-        @include inc-box-shadow(0,5px,5px,0,0.15);
-
+        @include inc-box-shadow(0, 5px, 5px, 0, 0.15);
         background: $white;
 
+        .nav__navigation li a {
+            color: $black;
+        }
+
+        @include media-breakpoint-up(lg) {
+
+            .nav__navigation {
+                transform: translateY(-16px);
+            }
+
+            .header__logo img {
+                transform: translateY(-15px);
+                max-width: 70%;
+
+            }
+        }
     }
 }

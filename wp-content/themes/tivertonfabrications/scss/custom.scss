@@ -31,20 +31,23 @@ $h6-font-size:                $font-size-base;
 
 $headings-margin-bottom:      1rem;
 
-$red:                         #ca241f;
-$black:                       #262626;
 $f1:                          'Heebo', sans-serif;
+$f2:                          'Titillium Web', sans-serif;
 
 .black{
     color: $black;
 }
 
 .red{
-    color:$red;
+    color: $red;
+}
+
+.grey{
+    color: $red;
 }
 
 .white{
-    color:$white;
+    color: $white;
 }
 
 .font1{
@@ -52,17 +55,14 @@ $f1:                          'Heebo', sans-serif;
     font-weight: 400;
 }
 
-
-body {
-
-    .btn-primary {
-        background: $red;
-        border-color: $red;
-
-        &:hover {
-            background: darken($red, 10%);
-            border-color: darken($red, 20%);
-        }
-    }
-
+.font2{
+    font-family: $f2;
+    font-weight: 700;
 }
+
+.font3{
+    font-family: $f2;
+    font-weight: 400;
+}
+
+
