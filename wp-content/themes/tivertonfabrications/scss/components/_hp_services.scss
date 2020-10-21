@@ -1,0 +1,133 @@
+.hp{
+    &__services{
+        position: relative;
+        background-color: $red;
+        background-image: url(/wp-content/themes/tivertonfabrications/static/images/services_bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 21px 0 40px 0;
+        margin: 50px auto 30px auto;
+
+        @include media-breakpoint-up(lg) {
+            padding: 277px 0 100px 0;
+            margin: -90px auto 30px auto;
+        }
+
+        @include media-breakpoint-up(lg) {
+            &:before {
+                content: "";
+                top: 0;
+                left: 0;
+                background: white;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                clip-path: polygon(100% 0, 0 0, 0 40%);
+            }
+        }
+
+        .container-fluid{
+            z-index: 2;
+            position: relative;
+        }
+
+        .img{
+            &__container{
+                position: relative;
+                margin-bottom: 30px;
+
+                img{
+                    width: 100%;
+                }
+
+                &:after{
+                    content:" ";
+                    position: absolute;
+                    z-index: 1;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    background-color: rgba(black, 0.5);
+                }
+
+                h4{
+                    @extend .font2;
+                    font-size: 30px;
+                    color: $white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    z-index: 2;
+                    text-align: center;
+                    width: 80%;
+                }
+            }
+        }
+
+        .idx_5{
+            .img {
+                &__container {
+
+                    &:after {
+                        background-color: $white;
+                    }
+
+                    h4{
+                        color: $red;
+                    }
+                }
+            }
+        }
+
+        .idx_7{
+            position: relative;
+
+            .content{
+
+                @include media-breakpoint-up(md) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    z-index: 2;
+                    width: 80%;
+                    margin: 0;
+                }
+
+                margin: 20px 0 40px 0;
+            }
+        }
+
+
+        @include media-breakpoint-down(md) {
+
+            .idx_7 {
+                order: 0;
+            }
+
+            .idx_0{
+                order: 1;
+            }
+
+            .idx_1{
+                order: 2;
+            }
+
+            .idx_2{
+                order: 3;
+            }
+
+            .idx_5{
+                order: 4;
+            }
+
+            .idx_6{
+                order: 5;
+            }
+        }
+    }
+}
