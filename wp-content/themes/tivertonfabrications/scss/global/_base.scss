@@ -70,14 +70,8 @@ body{
 
         &__white{
             @extend .font2;
-            font-size: 36px;
             color: $white;
-
-            //@include media-breakpoint-up(lg) {
-            //    font-size: 36px;
-            //}
         }
-
     }
 }
 

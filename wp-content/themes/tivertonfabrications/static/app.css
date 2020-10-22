@@ -1,10 +1,11 @@
+@charset "UTF-8";
 /* line 37, scss/custom.scss */
 .black {
   color: #262626;
 }
 
 /* line 41, scss/custom.scss */
-.red, .industry__item .title, body .section-title {
+.red, .industry__item .title, body .section-title, .rq__title {
   color: #ca241f;
 }
 
@@ -25,7 +26,7 @@
 }
 
 /* line 58, scss/custom.scss */
-.font2, .industry__item .title, .hp__services .img__container h4, body .red__button, body .sub-title, body .sub-title__white, body .section-title, body .section-title__white {
+.font2, .industry__item .title, .hp__services .img__container h3, body .red__button, body .af-submit.acf-form-submit button, .af-submit.acf-form-submit body button, body .sub-title, body .sub-title__white, body .section-title, body .section-title__white, .rq__title {
   font-family: "Titillium Web", sans-serif;
   font-weight: 700;
 }
@@ -34,6 +35,27 @@
 .font3, body {
   font-family: "Titillium Web", sans-serif;
   font-weight: 400;
+}
+
+/* line 68, scss/custom.scss */
+.fa, .fab, .fad, .fal, .far, .fas, .footer h3 a:after {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* line 78, scss/custom.scss */
+.fa, .fas, .footer h3 a:after {
+  font-weight: 900;
+}
+
+/* line 81, scss/custom.scss */
+.fa, .far, .fas, .footer h3 a:after {
+  font-family: "Font Awesome 5 Free";
 }
 
 /* line 7, node_modules/bootstrap/scss/_type.scss */
@@ -5265,7 +5287,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* line 7, node_modules/bootstrap/scss/_buttons.scss */
-.btn {
+.btn, .af-submit.acf-form-submit button {
   display: inline-block;
   font-weight: 400;
   color: #262626;
@@ -5283,30 +5305,30 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (prefers-reduced-motion: reduce) {
   /* line 7, node_modules/bootstrap/scss/_buttons.scss */
-  .btn {
+  .btn, .af-submit.acf-form-submit button {
     transition: none;
   }
 }
 
 /* line 13, node_modules/bootstrap/scss/mixins/_hover.scss */
-.btn:hover {
+.btn:hover, .af-submit.acf-form-submit button:hover {
   color: #262626;
   text-decoration: none;
 }
 
 /* line 27, node_modules/bootstrap/scss/_buttons.scss */
-.btn:focus, .btn.focus {
+.btn:focus, .af-submit.acf-form-submit button:focus, .btn.focus, .af-submit.acf-form-submit button.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 /* line 34, node_modules/bootstrap/scss/_buttons.scss */
-.btn.disabled, .btn:disabled {
+.btn.disabled, .af-submit.acf-form-submit button.disabled, .btn:disabled, .af-submit.acf-form-submit button:disabled {
   opacity: 0.65;
 }
 
 /* line 40, node_modules/bootstrap/scss/_buttons.scss */
-.btn:not(:disabled):not(.disabled) {
+.btn:not(:disabled):not(.disabled), .af-submit.acf-form-submit button:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
@@ -5317,21 +5339,21 @@ fieldset:disabled a.btn {
 }
 
 /* line 66, node_modules/bootstrap/scss/_buttons.scss */
-.btn-primary {
+.btn-primary, .af-submit.acf-form-submit button {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
 /* line 13, node_modules/bootstrap/scss/mixins/_hover.scss */
-.btn-primary:hover {
+.btn-primary:hover, .af-submit.acf-form-submit button:hover {
   color: #fff;
   background-color: #0069d9;
   border-color: #0062cc;
 }
 
 /* line 18, node_modules/bootstrap/scss/mixins/_buttons.scss */
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .af-submit.acf-form-submit button:focus, .btn-primary.focus, .af-submit.acf-form-submit button.focus {
   color: #fff;
   background-color: #0069d9;
   border-color: #0062cc;
@@ -5339,23 +5361,25 @@ fieldset:disabled a.btn {
 }
 
 /* line 32, node_modules/bootstrap/scss/mixins/_buttons.scss */
-.btn-primary.disabled, .btn-primary:disabled {
+.btn-primary.disabled, .af-submit.acf-form-submit button.disabled, .btn-primary:disabled, .af-submit.acf-form-submit button:disabled {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
 /* line 43, node_modules/bootstrap/scss/mixins/_buttons.scss */
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
+.btn-primary:not(:disabled):not(.disabled):active, .af-submit.acf-form-submit button:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .af-submit.acf-form-submit button:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle,
+.af-submit.acf-form-submit .show > button.dropdown-toggle {
   color: #fff;
   background-color: #0062cc;
   border-color: #005cbf;
 }
 
 /* line 53, node_modules/bootstrap/scss/mixins/_buttons.scss */
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
+.btn-primary:not(:disabled):not(.disabled):active:focus, .af-submit.acf-form-submit button:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .af-submit.acf-form-submit button:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.af-submit.acf-form-submit .show > button.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
@@ -6568,8 +6592,32 @@ input[type="button"].btn-block {
   }
 }
 
+/* line 111, scss/components/_main-nav.scss */
+.nav__navigation li a:before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: #ca241f;
+  content: "•";
+  text-shadow: transparent 0 0;
+  font-size: 1.2em;
+  transform: translateX(-50%) translateY(-58%);
+  pointer-events: none;
+  color: #ca241f;
+  text-shadow: 10px 0 #ca241f, -10px 0 #ca241f;
+  transition: all 300ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* line 129, scss/components/_main-nav.scss */
+.nav__navigation li a:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media (min-width: 1025px) {
-  /* line 115, scss/components/_main-nav.scss */
+  /* line 138, scss/components/_main-nav.scss */
   .nav__navigation li:last-child a {
     background: #ca241f;
     padding: 10px 20px;
@@ -6577,18 +6625,23 @@ input[type="button"].btn-block {
   }
 }
 
-/* line 131, scss/components/_main-nav.scss */
+/* line 144, scss/components/_main-nav.scss */
+.nav__navigation li:last-child a:before {
+  display: none;
+}
+
+/* line 157, scss/components/_main-nav.scss */
 .nav__navigation li.nav-drop-item {
   margin-left: 0;
 }
 
 @media (min-width: 1025px) {
-  /* line 143, scss/components/_main-nav.scss */
+  /* line 169, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav {
     padding-right: 1.25rem;
     text-indent: 0;
   }
-  /* line 150, scss/components/_main-nav.scss */
+  /* line 176, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav:before {
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -6601,14 +6654,14 @@ input[type="button"].btn-block {
   }
 }
 
-/* line 163, scss/components/_main-nav.scss */
+/* line 189, scss/components/_main-nav.scss */
 .nav__navigation .nav__item.has-sub-nav span {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 170, scss/components/_main-nav.scss */
+/* line 196, scss/components/_main-nav.scss */
 .nav__navigation .nav__item.has-sub-nav span a {
   position: relative;
   display: flex;
@@ -6625,7 +6678,7 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 1025px) {
-  /* line 170, scss/components/_main-nav.scss */
+  /* line 196, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav span a {
     color: #262626;
     text-indent: 0;
@@ -6633,7 +6686,7 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 1025px) {
-  /* line 208, scss/components/_main-nav.scss */
+  /* line 234, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav:hover:before {
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
@@ -6643,7 +6696,7 @@ input[type="button"].btn-block {
   }
 }
 
-/* line 222, scss/components/_main-nav.scss */
+/* line 248, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav {
   box-shadow: 0 0.3125rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0.3125rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.5);
@@ -6663,38 +6716,38 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 1025px) {
-  /* line 222, scss/components/_main-nav.scss */
+  /* line 248, scss/components/_main-nav.scss */
   .nav__navigation .nav__item .nav__sub-nav {
     top: auto;
   }
 }
 
-/* line 248, scss/components/_main-nav.scss */
+/* line 274, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav li {
   display: flex;
   border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.15);
 }
 
 @media (min-width: 1025px) {
-  /* line 248, scss/components/_main-nav.scss */
+  /* line 274, scss/components/_main-nav.scss */
   .nav__navigation .nav__item .nav__sub-nav li {
     border-bottom: 0.0625rem solid rgba(38, 38, 38, 0.15);
   }
 }
 
-/* line 261, scss/components/_main-nav.scss */
+/* line 287, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav li:last-of-type a {
   border-bottom: none;
 }
 
 @media (min-width: 1025px) {
-  /* line 260, scss/components/_main-nav.scss */
+  /* line 286, scss/components/_main-nav.scss */
   .nav__navigation .nav__item .nav__sub-nav li:last-of-type {
     border-bottom: 0.0625rem solid rgba(38, 38, 38, 0.15);
   }
 }
 
-/* line 281, scss/components/_main-nav.scss */
+/* line 307, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav li a {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -6714,26 +6767,26 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 1025px) {
-  /* line 281, scss/components/_main-nav.scss */
+  /* line 307, scss/components/_main-nav.scss */
   .nav__navigation .nav__item .nav__sub-nav li a {
     border-bottom: 0.0625rem solid rgba(38, 38, 38, 0.35);
   }
 }
 
-/* line 306, scss/components/_main-nav.scss */
+/* line 332, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav li a:hover {
   background: rgba(38, 38, 38, 0.15);
   color: #fff;
 }
 
 @media (min-width: 1025px) {
-  /* line 306, scss/components/_main-nav.scss */
+  /* line 332, scss/components/_main-nav.scss */
   .nav__navigation .nav__item .nav__sub-nav li a:hover {
     color: #262626;
   }
 }
 
-/* line 329, scss/components/_main-nav.scss */
+/* line 355, scss/components/_main-nav.scss */
 .nav__navigation .nav__item.has-sub-nav span a.nav__sub-nav__link {
   border: #262626 solid 0.0625rem;
   background: #fff;
@@ -6742,13 +6795,13 @@ input[type="button"].btn-block {
   width: 2.8125rem;
 }
 
-/* line 339, scss/components/_main-nav.scss */
+/* line 365, scss/components/_main-nav.scss */
 .nav__navigation .nav__item.has-sub-nav span a.nav__sub-nav__link i {
   display: flex;
   color: #262626;
 }
 
-/* line 361, scss/components/_main-nav.scss */
+/* line 387, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav__back-link i {
   display: flex;
   -moz-transform: rotate(180deg);
@@ -6759,7 +6812,7 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 1025px) {
-  /* line 380, scss/components/_main-nav.scss */
+  /* line 406, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav {
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -6779,26 +6832,26 @@ input[type="button"].btn-block {
     background: #fff;
     list-style: none;
   }
-  /* line 401, scss/components/_main-nav.scss */
+  /* line 427, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav li:after {
     display: none;
   }
 }
 
 @media (min-width: 1025px) {
-  /* line 418, scss/components/_main-nav.scss */
+  /* line 444, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav {
     left: auto;
   }
-  /* line 423, scss/components/_main-nav.scss */
+  /* line 449, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav li:first-of-type a {
     border-top: 0.0625rem solid rgba(38, 38, 38, 0.35);
   }
-  /* line 430, scss/components/_main-nav.scss */
+  /* line 456, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav li:last-of-type a {
     border-bottom: none;
   }
-  /* line 437, scss/components/_main-nav.scss */
+  /* line 463, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav li a {
     border-bottom: 0.0625rem solid rgba(38, 38, 38, 0.35);
     display: flex;
@@ -6813,18 +6866,18 @@ input[type="button"].btn-block {
     height: auto;
     text-align: center;
   }
-  /* line 458, scss/components/_main-nav.scss */
+  /* line 484, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav .nav__sub-nav li a:hover {
     color: #262626;
   }
 }
 
 @media (min-width: 1025px) {
-  /* line 478, scss/components/_main-nav.scss */
+  /* line 504, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav:hover span a {
     color: #262626;
   }
-  /* line 483, scss/components/_main-nav.scss */
+  /* line 509, scss/components/_main-nav.scss */
   .nav__navigation .nav__item.has-sub-nav:hover .nav__sub-nav {
     pointer-events: all;
     opacity: 1;
@@ -6832,7 +6885,7 @@ input[type="button"].btn-block {
   }
 }
 
-/* line 501, scss/components/_main-nav.scss */
+/* line 527, scss/components/_main-nav.scss */
 .nav__navigation .nav__item .nav__sub-nav.active {
   left: 0;
 }
@@ -6874,6 +6927,7 @@ input[type="button"].btn-block {
 
 /* line 30, scss/components/_footer.scss */
 .footer h3 a {
+  position: relative;
   margin-bottom: 1rem;
   display: inline-block;
 }
@@ -6895,90 +6949,110 @@ input[type="button"].btn-block {
   }
 }
 
-/* line 47, scss/components/_footer.scss */
+/* line 46, scss/components/_footer.scss */
+.footer h3 a:after {
+  content: "\f068";
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+@media (min-width: 1025px) {
+  /* line 46, scss/components/_footer.scss */
+  .footer h3 a:after {
+    display: none;
+  }
+}
+
+/* line 59, scss/components/_footer.scss */
+.footer h3 a.collapsed:after {
+  content: "\f067";
+}
+
+/* line 66, scss/components/_footer.scss */
 .footer h3, .footer h3 a {
   font-size: 20px;
 }
 
-/* line 52, scss/components/_footer.scss */
+/* line 71, scss/components/_footer.scss */
 .footer ul {
   list-style: none;
   padding: 0;
 }
 
 @media (max-width: 1024.98px) {
-  /* line 52, scss/components/_footer.scss */
+  /* line 71, scss/components/_footer.scss */
   .footer ul {
     padding-bottom: 30px;
   }
 }
 
 @media (max-width: 1024.98px) {
-  /* line 61, scss/components/_footer.scss */
+  /* line 80, scss/components/_footer.scss */
   .footer__logo {
     text-align: center;
     display: block;
   }
 }
 
-/* line 67, scss/components/_footer.scss */
+/* line 86, scss/components/_footer.scss */
 .footer__logo img {
   max-width: 200px;
 }
 
 @media (max-width: 1024.98px) {
-  /* line 67, scss/components/_footer.scss */
+  /* line 86, scss/components/_footer.scss */
   .footer__logo img {
     max-width: 110px;
   }
 }
 
-/* line 75, scss/components/_footer.scss */
+/* line 94, scss/components/_footer.scss */
 .footer__inner {
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 1025px) {
-  /* line 75, scss/components/_footer.scss */
+  /* line 94, scss/components/_footer.scss */
   .footer__inner {
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-/* line 90, scss/components/_footer.scss */
+/* line 109, scss/components/_footer.scss */
 .footer__inner__section.company-info {
   display: flex;
   flex-direction: column;
 }
 
 @media (max-width: 1024.98px) {
-  /* line 90, scss/components/_footer.scss */
+  /* line 109, scss/components/_footer.scss */
   .footer__inner__section.company-info {
     text-align: center;
     margin: 25px 0 25px 0;
   }
 }
 
-/* line 100, scss/components/_footer.scss */
+/* line 119, scss/components/_footer.scss */
 .footer__inner__section.company-info h4 {
   margin: 0;
 }
 
-/* line 105, scss/components/_footer.scss */
+/* line 124, scss/components/_footer.scss */
 .footer__inner__section.company-info a:last-of-type {
   margin-top: 20px;
 }
 
-/* line 116, scss/components/_footer.scss */
+/* line 135, scss/components/_footer.scss */
 .footer__sub-footer {
   margin-top: 1.875rem;
   background: #262626;
   padding: 2.2rem 0;
 }
 
-/* line 121, scss/components/_footer.scss */
+/* line 140, scss/components/_footer.scss */
 .footer__sub-footer p {
   text-align: left;
   margin: 0;
@@ -6987,20 +7061,20 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 1024.98px) {
-  /* line 121, scss/components/_footer.scss */
+  /* line 140, scss/components/_footer.scss */
   .footer__sub-footer p {
     text-align: center;
     font-size: 12px;
   }
 }
 
-/* line 133, scss/components/_footer.scss */
+/* line 152, scss/components/_footer.scss */
 .footer__sub-footer p a {
   color: #fff;
 }
 
 @media (max-width: 1024.98px) {
-  /* line 133, scss/components/_footer.scss */
+  /* line 152, scss/components/_footer.scss */
   .footer__sub-footer p a {
     font-size: 12px;
   }
@@ -7031,6 +7105,11 @@ input[type="button"].btn-block {
   }
 }
 
+/* line 23, scss/components/_banner.scss */
+.homepage-banner .hbupro-hero-banner-wrp-1 .hbupro-hero-banner-inner {
+  padding: 110px 0px 110px 0px;
+}
+
 @media (min-width: 768px) {
   /* line 23, scss/components/_banner.scss */
   .homepage-banner .hbupro-hero-banner-wrp-1 .hbupro-hero-banner-inner {
@@ -7043,6 +7122,15 @@ input[type="button"].btn-block {
   .homepage-banner .hbupro-hero-banner-wrp-1 .hbupro-hero-banner-inner {
     padding: 240px 0px 240px 0px;
   }
+}
+
+/* line 36, scss/components/_banner.scss */
+.homepage-banner .hbupro-hero-banner-wrp-1 .hbupro-hero-banner {
+  background-color: #000000;
+  background-image: url(/wp-content/themes/tivertonfabrications/static/images/banner-1-2-1600x886.png);
+  background-size: cover;
+  background-position: 50% center;
+  background-attachment: fixed;
 }
 
 /* line 2, scss/components/_industry.scss */
@@ -7069,7 +7157,7 @@ input[type="button"].btn-block {
 /* line 2, scss/components/_hp_what.scss */
 .hp__what {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   margin-top: 40px;
 }
 
@@ -7085,16 +7173,28 @@ input[type="button"].btn-block {
   margin: 50px auto 30px auto;
 }
 
+/* line 12, scss/components/_hp_services.scss */
+.hp__services:after {
+  content: " ";
+  background-color: rgba(202, 36, 31, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media (min-width: 1025px) {
   /* line 2, scss/components/_hp_services.scss */
   .hp__services {
     padding: 277px 0 100px 0;
-    margin: -90px auto 30px auto;
+    margin: -140px auto 30px auto;
   }
 }
 
 @media (min-width: 1025px) {
-  /* line 18, scss/components/_hp_services.scss */
+  /* line 28, scss/components/_hp_services.scss */
   .hp__services:before {
     content: "";
     top: 0;
@@ -7103,29 +7203,30 @@ input[type="button"].btn-block {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
     clip-path: polygon(100% 0, 0 0, 0 40%);
   }
 }
 
-/* line 31, scss/components/_hp_services.scss */
+/* line 41, scss/components/_hp_services.scss */
 .hp__services .container-fluid, .hp__services .container-sm, .hp__services .container-md, .hp__services .container-lg, .hp__services .container-xl {
-  z-index: 2;
+  z-index: 3;
   position: relative;
 }
 
-/* line 37, scss/components/_hp_services.scss */
+/* line 48, scss/components/_hp_services.scss */
 .hp__services .img__container {
   position: relative;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
-/* line 41, scss/components/_hp_services.scss */
+/* line 53, scss/components/_hp_services.scss */
 .hp__services .img__container img {
   width: 100%;
 }
 
-/* line 45, scss/components/_hp_services.scss */
+/* line 57, scss/components/_hp_services.scss */
 .hp__services .img__container:after {
   content: " ";
   position: absolute;
@@ -7135,11 +7236,16 @@ input[type="button"].btn-block {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: all 300ms ease;
 }
 
-/* line 56, scss/components/_hp_services.scss */
-.hp__services .img__container h4 {
-  font-size: 30px;
+/* line 71, scss/components/_hp_services.scss */
+.hp__services .img__container:hover:after {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* line 76, scss/components/_hp_services.scss */
+.hp__services .img__container h3 {
   color: #fff;
   position: absolute;
   top: 50%;
@@ -7150,28 +7256,35 @@ input[type="button"].btn-block {
   width: 80%;
 }
 
-/* line 75, scss/components/_hp_services.scss */
+@media (max-width: 767.98px) {
+  /* line 76, scss/components/_hp_services.scss */
+  .hp__services .img__container h3 {
+    font-size: 1.2em;
+  }
+}
+
+/* line 98, scss/components/_hp_services.scss */
 .hp__services .idx_5 .img__container:after {
   background-color: #fff;
 }
 
-/* line 79, scss/components/_hp_services.scss */
-.hp__services .idx_5 .img__container h4 {
+/* line 102, scss/components/_hp_services.scss */
+.hp__services .idx_5 .img__container h3 {
   color: #ca241f;
 }
 
-/* line 86, scss/components/_hp_services.scss */
+/* line 109, scss/components/_hp_services.scss */
 .hp__services .idx_7 {
   position: relative;
 }
 
-/* line 89, scss/components/_hp_services.scss */
+/* line 112, scss/components/_hp_services.scss */
 .hp__services .idx_7 .content {
   margin: 20px 0 40px 0;
 }
 
 @media (min-width: 768px) {
-  /* line 89, scss/components/_hp_services.scss */
+  /* line 112, scss/components/_hp_services.scss */
   .hp__services .idx_7 .content {
     position: absolute;
     top: 50%;
@@ -7184,27 +7297,27 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 1024.98px) {
-  /* line 108, scss/components/_hp_services.scss */
+  /* line 131, scss/components/_hp_services.scss */
   .hp__services .idx_7 {
     order: 0;
   }
-  /* line 112, scss/components/_hp_services.scss */
+  /* line 135, scss/components/_hp_services.scss */
   .hp__services .idx_0 {
     order: 1;
   }
-  /* line 116, scss/components/_hp_services.scss */
+  /* line 139, scss/components/_hp_services.scss */
   .hp__services .idx_1 {
     order: 2;
   }
-  /* line 120, scss/components/_hp_services.scss */
+  /* line 143, scss/components/_hp_services.scss */
   .hp__services .idx_2 {
     order: 3;
   }
-  /* line 124, scss/components/_hp_services.scss */
+  /* line 147, scss/components/_hp_services.scss */
   .hp__services .idx_5 {
     order: 4;
   }
-  /* line 128, scss/components/_hp_services.scss */
+  /* line 151, scss/components/_hp_services.scss */
   .hp__services .idx_6 {
     order: 5;
   }
@@ -7232,13 +7345,13 @@ body {
 }
 
 /* line 20, scss/global/_base.scss */
-body .btn-primary {
+body .btn-primary, body .af-submit.acf-form-submit button, .af-submit.acf-form-submit body button {
   background: #ca241f;
   border-color: #ca241f;
 }
 
 /* line 24, scss/global/_base.scss */
-body .btn-primary:hover {
+body .btn-primary:hover, body .af-submit.acf-form-submit button:hover, .af-submit.acf-form-submit body button:hover {
   background: #9e1c18;
   border-color: #721411;
 }
@@ -7258,7 +7371,7 @@ body .sep {
 }
 
 /* line 41, scss/global/_base.scss */
-body .red__button {
+body .red__button, body .af-submit.acf-form-submit button, .af-submit.acf-form-submit body button {
   border-radius: 0;
   align-self: start;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
@@ -7291,44 +7404,43 @@ body .section-title {
 
 /* line 71, scss/global/_base.scss */
 body .section-title__white {
-  font-size: 36px;
   color: #fff;
 }
 
-/* line 84, scss/global/_base.scss */
+/* line 78, scss/global/_base.scss */
 address {
   margin-bottom: 2rem;
   font-style: normal;
 }
 
-/* line 91, scss/global/_base.scss */
+/* line 85, scss/global/_base.scss */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-/* line 100, scss/global/_base.scss */
+/* line 94, scss/global/_base.scss */
 .max-width {
   max-width: 75rem;
 }
 
-/* line 105, scss/global/_base.scss */
+/* line 99, scss/global/_base.scss */
 .w-100 {
   width: 100%;
 }
 
-/* line 110, scss/global/_base.scss */
+/* line 104, scss/global/_base.scss */
 .img-fluid {
   max-width: 100%;
 }
 
-/* line 118, scss/global/_base.scss */
+/* line 112, scss/global/_base.scss */
 .p-relative {
   position: relative;
 }
 
-/* line 123, scss/global/_base.scss */
+/* line 117, scss/global/_base.scss */
 .p-absolute {
   position: absolute;
 }
@@ -7340,44 +7452,66 @@ address {
   padding: 0;
 }
 
-/* line 12, scss/global/_forms.scss */
+/* line 10, scss/global/_forms.scss */
 .af-form.acf-form .af-field .af-label label {
   font-size: 1rem;
   font-weight: 600;
+  display: none;
 }
 
-/* line 25, scss/global/_forms.scss */
+/* line 17, scss/global/_forms.scss */
+.af-form.acf-form .af-field-first-name {
+  width: 48%;
+  float: left;
+  clear: none;
+  margin-right: 2%;
+}
+
+/* line 24, scss/global/_forms.scss */
+.af-form.acf-form .af-field-last-name {
+  width: 48%;
+  float: left;
+  clear: none;
+  margin-left: 2%;
+}
+
+/* line 34, scss/global/_forms.scss */
+.rq__title {
+  margin-top: 20px;
+}
+
+@media (min-width: 1025px) {
+  /* line 34, scss/global/_forms.scss */
+  .rq__title {
+    margin-top: 60px;
+  }
+}
+
+/* line 48, scss/global/_forms.scss */
 .af-form.acf-form .af-field input,
 .af-form.acf-form .af-field textarea {
-  border: 0.0625rem solid;
+  border: 0.0625rem solid #dedede;
 }
 
-/* line 31, scss/global/_forms.scss */
+/* line 53, scss/global/_forms.scss */
 .af-form.acf-form .af-field input {
   height: 3.125rem;
 }
 
-/* line 36, scss/global/_forms.scss */
+/* line 57, scss/global/_forms.scss */
 .af-form.acf-form .af-field textarea {
   height: 9.375rem;
 }
 
-/* line 47, scss/global/_forms.scss */
+/* line 66, scss/global/_forms.scss */
 .af-submit.acf-form-submit {
   margin-bottom: 1.5rem;
   padding: 0;
 }
 
-/* line 52, scss/global/_forms.scss */
+/* line 70, scss/global/_forms.scss */
 .af-submit.acf-form-submit button {
-  border-radius: 1rem;
-  border: none;
-  background: #262626;
-  height: 3.125rem;
-  width: 14.375rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
+  width: auto;
 }
 
 /* line 2, scss/objects/_google-map.scss */

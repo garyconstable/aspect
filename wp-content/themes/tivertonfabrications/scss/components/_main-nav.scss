@@ -101,12 +101,35 @@
                 font-weight: 600;
                 color: $black;
                 position: relative;
-
                 min-height: rem-calc(44);
 
                 @include media-breakpoint-up(lg){
-
                     color: $white;
+                }
+
+
+                &:before{
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    color: $red;
+                    content: "•";
+                    text-shadow: transparent 0 0;
+                    font-size: 1.2em;
+                    transform: translateX(-50%) translateY(-58%);
+                    pointer-events: none;
+                    color: $red;
+                    text-shadow: 10px 0 $red, -10px 0 $red;
+                    transition: all 300ms ease;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                &:hover{
+                    &:before {
+                        opacity: 1;
+                        visibility: visible;
+                    }
                 }
             }
 
@@ -117,6 +140,9 @@
                         background: $red;
                         padding: 10px 20px;
                         color: $white !important;
+                    }
+                    &:before{
+                        display: none;
                     }
                 }
             }

@@ -8,8 +8,25 @@
 
 {% block content %}
 
+    {# I CHEATED AND STOLE THE PLUGIN CODE TO SAVE TIME! #}
     <section class="homepage-banner">
-        {{ function('do_shortcode', '[hbupro_banner id="46"]') }}
+        <div class="hbupro-hero-banner-wrp-1 hbupro-clearfix hbupro-layout-1">
+            <div class="hbupro-hero-banner hbupro-clearfix">
+                <div class="hbupro-hero-banner-inner hbupro-clearfix">
+                    <div class="hbupro-hero-banner-inner-wrap">
+                        <div class=" hbupro-medium-12 hbupro-columns hbupro-hero-content-position hbupro-text-center">
+                            <h2 class="hbupro-hero-banner-title"></h2>
+                            <div class="hbupro-hero-banner-sub-title"><div class="text-center">
+                                    <span class="red h1">MANUFACTURERS OF</span><br>
+                                    <span class="white h2">BESPOKE CHAMBERS, VESSELS, TUBES &amp; CYLINDERS</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <main class="mb-5">
@@ -45,16 +62,16 @@
 
                     {% for item in services.service %}
 
-                        <div class="col-md col-md-3 idx_{{ loop.index0 }}">
+                        <div class="col-6 col-md-3 idx_{{ loop.index0 }}">
                             <div class="img__container">
                                 <img src="{{ item.image.url }}" class="img-fluid" />
-                                <h4>{{ item.text }}</h4>
+                                <h3>{{ item.text }}</h3>
                             </div>
                         </div>
 
                         {% if loop.index0 == 1 %}
 
-                            <div class="col-md col-md-6 idx_7">
+                            <div class="col-12 col-md-6 col-md-3 idx_7">
                                 <div class="content">
                                     <p class="mb-0 sub-title__white">{{ services.sub_title }}</p>
                                     <h2 class="section-title__white">{{ services.title }}</h2>
@@ -80,14 +97,21 @@
                     <div class="row">
 
                         <section class="col-sm">
-                            <h3 class="text-left section-title mt-3 mt-lg-5 mb-2">{{ why.title }}</h3>
-                            <div>{{ why.content }}</div>
+                            <div class="row">
+                                <div class="col-12 col-sm-10">
+                                    <h3 class="text-left section-title mt-3 mt-lg-5 mb-2">{{ why.title }}</h3>
+                                    <div>{{ why.content }}</div>
+                                </div>
+                            </div>
                         </section>
 
                         <section class="col-sm">
-                            {#
-                            {{ function('do_shortcode', quote) }}
-                            #}
+                            <div class="row">
+                                <div class="col-12 offset-sm-2 col-sm-10">
+                                    <h3 class="rq__title">Request a Quote</h3>
+                                    {{ function('do_shortcode', quote) }}
+                                </div>
+                            </div>
                         </section>
 
                     </div>
@@ -110,13 +134,21 @@
 
                         {% for item in industries %}
 
-                            <div class="col-md industry__item">
+                            {% set class = "col-12 col-sm-6 col-lg-4" %}
+
+                            {% if loop.index0 == 0 %}
+
+                                {% set class = "col-12 col-lg-4" %}
+
+                            {% endif %}
+
+                            <div class="{{ class }} industry__item">
                                 <div>
                                     <img class="img-fluid" src="{{ item.image.url }}" alt="Image of {{ item.title }}" />
                                     <h3 class="title">{{ item.title }}</h3>
                                     <div class="content">{{ item.content }}</div>
                                 </div>
-                                <a href="#" class="red__button btn btn-primary mt-4">Learn More</a>
+                                <a class="red__button btn btn-primary mt-4">Learn More</a>
                             </div>
 
                         {%  endfor %}

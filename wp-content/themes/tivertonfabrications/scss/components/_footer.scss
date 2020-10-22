@@ -27,19 +27,38 @@
     h3{
         color: $white;
 
-        a{
+        a {
+            position: relative;
             margin-bottom: 1rem;
             display: inline-block;
 
-            @include media-breakpoint-up(lg){
+            @include media-breakpoint-up(lg) {
                 pointer-events: none;
             }
 
             @include media-breakpoint-down(md) {
-                display:block;
+                display: block;
                 border-bottom: solid 1px $white;
                 text-decoration: none;
                 padding-bottom: 19px;
+            }
+
+            &:after {
+                @extend .fas;
+                content : "\f068";
+                position: absolute;
+                right:0;
+                top:4px;
+
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+
+            &.collapsed{
+                &:after {
+                    content : "\f067";
+                }
             }
         }
     }
